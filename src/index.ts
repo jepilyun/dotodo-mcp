@@ -461,9 +461,9 @@ server.registerTool(
 server.registerTool(
   'complete_todos',
   {
-    description: 'Toggle completion for multiple todos at once (max 100). Pending->completed, completed->pending.',
+    description: 'Toggle completion for multiple todos at once (plan-limited: Free 5, Pro 30). Pending->completed, completed->pending.',
     inputSchema: {
-      todoIds: z.array(z.string()).describe('Array of todo UUIDs to toggle (max 100)'),
+      todoIds: z.array(z.string()).describe('Array of todo UUIDs to toggle (plan-limited)'),
     },
   },
   async (args) => {
@@ -491,9 +491,9 @@ server.registerTool(
 server.registerTool(
   'delete_todos',
   {
-    description: 'Delete multiple todos at once (max 100, soft delete).',
+    description: 'Delete multiple todos at once (plan-limited: Free 5, Pro 30, soft delete).',
     inputSchema: {
-      todoIds: z.array(z.string()).describe('Array of todo UUIDs to delete (max 100)'),
+      todoIds: z.array(z.string()).describe('Array of todo UUIDs to delete (plan-limited)'),
     },
   },
   async (args) => {
